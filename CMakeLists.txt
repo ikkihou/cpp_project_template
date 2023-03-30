@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.20)
 set(CMAKE_C_COMPILER "/usr/bin/clang")
 set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
-project(ex_opencv)
+project(cpp_project_template)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -31,8 +31,6 @@ set(CMAKE_LIB_DIR "${PROJECT_SOURCE_DIR}/src")
 
 message(STATUS "PROJECT_NAME:${PROJECT_NAME}")
 message(STATUS "CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
-
-find_package( OpenCV REQUIRED )
 
 include_directories(${PROJECT_INCLUDE_DIR})
 add_subdirectory(src bin)

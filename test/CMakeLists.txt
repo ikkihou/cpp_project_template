@@ -8,7 +8,6 @@ foreach( file ${TEST_SRCS} )
     target_link_libraries(${name}
                     PRIVATE
                     GTest::gtest_main
-                    ${OpenCV_LIBS}
                     leekle
                     )
     add_test(NAME ${name} COMMAND ${name})

@@ -33,6 +33,7 @@ message(STATUS "PROJECT_NAME:${PROJECT_NAME}")
 message(STATUS "CMAKE_SOURCE_DIR: ${CMAKE_SOURCE_DIR}")
 
 include_directories(${PROJECT_INCLUDE_DIR})
+include_directories(${CMAKE_INCLUDE_DIR})
 
 add_subdirectory(src bin)
 add_subdirectory(test)

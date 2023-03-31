@@ -1,23 +1,25 @@
 message(STATUS "CMAKE PROJECT LIB DIR:" ${PROJECT_SOURCE_DIR}/src)
 
+set(LIB_NAME "MY_PROJECT_LIB")
+
 # set all source files to DIR_SRCS
 aux_source_directory(${PROJECT_SOURCE_DIR}/src DIR_SRCS)
 
 # generate static library
-add_library(leekle_static STATIC ${DIR_SRCS})
+add_library("${LIB_NAME}_static" STATIC ${DIR_SRCS})
 
 # rename leekle_static to leekle
-set_target_properties(leekle_static PROPERTIES OUTPUT_NAME "leekle")
-set_target_properties(leekle_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties("${LIB_NAME}_static" PROPERTIES OUTPUT_NAME "${LIB_NAME}")
+set_target_properties("${LIB_NAME}_static" PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 
 # generate shared library
-add_library(leekle SHARED ${DIR_SRCS})
+add_library(${LIB_NAME} SHARED ${DIR_SRCS})
 
-set_target_properties(leekle PROPERTIES OUTPUT_NAME "leekle")
-set_target_properties(leekle PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties(${LIB_NAME} PROPERTIES OUTPUT_NAME "${LIB_NAME}")
+set_target_properties(${LIB_NAME} PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 
 target_link_directories(
-    leekle
+    ${LIB_NAME}
     PUBLIC
     ${PROJECT_INCLUDE_DIR}
 )

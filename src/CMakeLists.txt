@@ -8,7 +8,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src DIR_SRCS)
 # generate static library
 add_library("${LIB_NAME}_static" STATIC ${DIR_SRCS})
 
-# rename leekle_static to leekle
+# rename ${LIB_NAME}_static to ${LIB_NAME}
 set_target_properties("${LIB_NAME}_static" PROPERTIES OUTPUT_NAME "${LIB_NAME}")
 set_target_properties("${LIB_NAME}_static" PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 
